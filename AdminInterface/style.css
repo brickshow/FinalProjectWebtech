@@ -1,0 +1,292 @@
+/* ======== GLobal ========= */
+* {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+/* =========== Set default color =========== */
+:root {
+    --pink: #FFB6C1;
+    --white: #fff;
+    --black: #222;
+    --gray: #999;
+    --hoverPink: #f3dbdf;
+
+}
+
+/* ===================== body design ===================== */
+
+body {
+    display: block;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    /* Adjust height as needed */
+    border: none;
+    /* Remove border if desired */
+}
+
+.container {
+    position: absolute;
+    display: contents;
+    width: 100%;
+}
+
+/* ===================== navigation design ===================== */
+.navigation {
+    position: fixed;
+    display: block;
+    width: 290px;
+    height: 100%;
+    background-color: var(--pink);
+    border-left: 10px solid var(--pink);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navigation ul li {
+    position: flex;
+    width: 100%;
+    font-size: 25px;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation ul li a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    text-align: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    min-width: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    min-width: 60px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* ========================= add cord=ner radius==================== */
+.navigation ul li a.active::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    padding-left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50px;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li a.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    padding-left: 0;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50px;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li a.active {
+    background-color: var(--white);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+/* ======================== Set the shop logo ============================ */
+.shop-logo {
+    width: 100%;
+    height: 90px;
+}
+
+.shop-logo img {
+    display: block;
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+
+/* ========================= Add design to topbar Menu ======================== */
+.main {
+    position: absolute;
+    width: calc(100% - 290px);
+    left: 290px;
+    transition: 0.5s;
+    height: 100vh;
+}
+
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.main .topbar {
+    display: flex;
+    position: relative;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.main .topbar .menu-bar ion-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.main .topbar .account img {
+    width: 30px;
+    border-radius: 50px;
+    border-width: 1px solid var(--pink);
+}
+
+/* ======================= search bar ====================== */
+
+.main .topbar .search-bar {
+    display: flex;
+    position: relative;
+    width: 400px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid var(--black);
+}
+
+.main .topbar .search-bar input {
+    display: block;
+    width: 400px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.main .topbar .search-bar button {
+    width: 40px;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    justify-content: right;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid var(--black);
+}
+
+/* ========================= design for form ======================== */
+
+.main .dynamic-content {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 10px;
+    width: calc(100% - 10px);
+    height: calc(100% - 50px);
+    align-items: center;
+    justify-content: center;
+}
+
+.main .dynamic-content .loadContent {
+    display: flex;
+    position: relative;
+    width: 98%;
+    height: 98%;
+    color: white;
+    color: var(--black);
+    border-radius: 25px;
+}
+
+/* ======================= Design for products container  ======================== */
+
+.prod-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.prod-container .prodList,
+.prod-container .addProducts {
+    flex-direction: row;
+    width: 100%;
+    height: 98%;
+    margin: 5px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 6px  var(--black);
+    border-color: transparent;
+
+}
+
+.prod-container .prodList .table button{
+    align-items: center;
+    justify-content: center;
+}
+
+.prod-container .prodList .product-topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+/* ============= for hiding and showing add products layout  ====================== */
+.prod-container .addProducts{
+    display: none;
+}
+
+.prod-container .addProducts.show{
+    display: flex;
+}
+
+
